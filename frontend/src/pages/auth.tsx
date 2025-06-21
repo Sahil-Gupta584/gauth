@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { backendUrl } from "./utils";
 
 export default function Auth() {
   const [isLoading, setIsLoading] = useState(false);
@@ -17,7 +18,7 @@ export default function Auth() {
         setIsLoading(false);
         return;
       }
-      const userDataRes = await fetch("http://gauth-black.vercel.app/verifyAuth", {
+      const userDataRes = await fetch(backendUrl+"/verifyAuth", {
         method: "POST",
         body: JSON.stringify({ code }),
         headers: {
