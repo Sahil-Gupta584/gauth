@@ -5,7 +5,7 @@ import cors from "cors";
 config();
 
 const app = express();
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: ["http://localhost:5173" ,"https://gauth-black.vercel.app"]}));
 app.use(express.json());
 const clientId = process.env.CLIENT_ID;
 const redirectUri = process.env.REDIRECT_URI;
