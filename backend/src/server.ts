@@ -11,6 +11,11 @@ const clientId = process.env.CLIENT_ID;
 const redirectUri = process.env.REDIRECT_URI;
 const clientSecret = process.env.CLIENT_SECRET;
 
+app.use((req, res, next) => {
+  console.log(`[${req.method}] ${req.url} - Origin: ${req.headers.origin}`);
+  next();
+});
+
 app.get("/getAuthUrl", (req, res) => {
   try {
     if (!clientId || !redirectUri) throw new Error("Invalid envs");
