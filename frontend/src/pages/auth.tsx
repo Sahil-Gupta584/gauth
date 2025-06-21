@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { backendUrl } from "./utils";
 
@@ -11,14 +11,14 @@ export default function Auth() {
     (async () => {
       setIsLoading(true);
       const code = searchParams.get("code");
-      
+
       if (!code) {
         alert("Invalid code.");
         navigate("/");
         setIsLoading(false);
         return;
       }
-      const userDataRes = await fetch(backendUrl+"/verifyAuth", {
+      const userDataRes = await fetch(backendUrl + "/verifyAuth", {
         method: "POST",
         body: JSON.stringify({ code }),
         headers: {
