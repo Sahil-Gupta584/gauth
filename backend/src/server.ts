@@ -10,7 +10,6 @@ app.use(express.json());
 const clientId = process.env.CLIENT_ID;
 const redirectUri = process.env.REDIRECT_URI;
 const clientSecret = process.env.CLIENT_SECRET;
-console.log({ clientId, redirectUri, clientSecret });
 
 app.get("/getAuthUrl", (req, res) => {
   try {
