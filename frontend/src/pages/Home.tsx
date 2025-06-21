@@ -2,7 +2,7 @@
 function Home() {
   async function handleAuth() {
     try {
-      const response = await fetch("http://localhost:3000/getAuthUrl");
+      const response = await fetch("http://gauth-black.vercel.app/getAuthUrl");
       const data = await response.json();
       if (!data.authUrl) {
         throw new Error("Authentication URL not found");

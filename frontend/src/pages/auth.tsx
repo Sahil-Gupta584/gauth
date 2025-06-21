@@ -17,7 +17,7 @@ export default function Auth() {
         setIsLoading(false);
         return;
       }
-      const userDataRes = await fetch("http://localhost:3000/verifyAuth", {
+      const userDataRes = await fetch("http://gauth-black.vercel.app/verifyAuth", {
         method: "POST",
         body: JSON.stringify({ code }),
         headers: {
